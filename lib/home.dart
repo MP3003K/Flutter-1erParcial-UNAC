@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'screens/Calculator_screen.dart';
+import 'screens/cal_screen.dart';
 
 class BaseConverter extends StatefulWidget {
   const BaseConverter({Key? key}) : super(key: key);
@@ -15,7 +15,7 @@ class _BaseConverterState extends State<BaseConverter> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: Stack(
-      children: <Widget>[CalculatorScreen(), Text('final')],
+      children: <Widget>[CalculatorScreen()],
     ));
   }
 }

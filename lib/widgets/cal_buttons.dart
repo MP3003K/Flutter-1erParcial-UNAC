@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get_connect/http/src/utils/utils.dart';
 
 class CalculatorButtom extends StatelessWidget {
   final Color bgColor;
@@ -18,14 +17,14 @@ class CalculatorButtom extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final ButtonStyle = TextButton.styleFrom(
+    final buttonStyle = TextButton.styleFrom(
         shape: const StadiumBorder(),
         primary: Colors.white,
         backgroundColor: bgColor);
     return Container(
       margin: const EdgeInsets.only(bottom: 10, right: 5, left: 5),
       child: TextButton(
-        style: ButtonStyle,
+        style: buttonStyle,
         child: SizedBox(
           width: big ? 150 : 65,
           height: 65,
