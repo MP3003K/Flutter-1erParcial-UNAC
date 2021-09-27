@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
           primaryColor: primaryColor,
           scaffoldBackgroundColor: bgColor,
           canvasColor: bgColor,
-          textTheme: GoogleFonts.poppinsTextTheme(Theme.of(context).textTheme)
+          textTheme: GoogleFonts.quanticoTextTheme(Theme.of(context).textTheme)
               .apply(bodyColor: Colors.white)
               .copyWith(
                 bodyText1: const TextStyle(color: bodyTextColor),

@@ -1,4 +1,4 @@
-import 'package:basecalculator/controller/conversor_controller.dart';
+import 'package:basecalculator/controller/conv_bases_controller.dart';
 import 'package:basecalculator/widgets/main_num_conv.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
