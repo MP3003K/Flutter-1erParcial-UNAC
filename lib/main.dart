@@ -1,4 +1,5 @@
-import 'package:basecalculator/home.dart';
+import 'package:basecalculator/screens/calc_conv_screen.dart';
+import 'package:basecalculator/widgets/prueba.dart';
 import 'package:flutter/material.dart';
 
 import 'constants.dart';
@@ -29,6 +30,6 @@ class MyApp extends StatelessWidget {
                 bodyText2: const TextStyle(color: bodyTextColor),
               ),
         ),
-        home: const BaseConverter());
+        home: CalculatorScreen());
   }
 }
