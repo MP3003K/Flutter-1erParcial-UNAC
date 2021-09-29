@@ -108,9 +108,10 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
                         ? null
                         : calculatorCtrl.addNumber('2')),
                 CalculatorButtom(
-                  text: '3',
-                  onPressed: () => calculatorCtrl.addNumber('3'),
-                ),
+                    text: '3',
+                    onPressed: () => calculatorCtrl.desabilitarButton(3)
+                        ? null
+                        : calculatorCtrl.addNumber('3')),
               ],
             ),
             Row(
