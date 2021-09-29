@@ -1,19 +1,56 @@
 import 'package:get/get.dart';
 
 class ConverterController extends GetxController {
-  var firstNumber = '10'.obs;
-  var secondNumber = '20'.obs;
   var mathResult = '25'.obs;
-  var operation = '+'.obs;
-  var bin = '4'.obs;
+  var basePrincipal = 8.obs;
+
+  var bin = ''.obs;
   var oct = ''.obs;
   var dec = ''.obs;
   var hex = ''.obs;
+
+  bool desabilitarButton(int numero) {
+    bool resp = false;
+    if (numero >= basePrincipal.value) {
+      resp = true;
+    }
+
+    return resp;
+  }
+
+  bool getBasePrincipal(int base) {
+    bool resp = false;
+    if (base == basePrincipal.value) {
+      resp = true;
+    }
+    return resp;
+  }
+
+  cambiarBasePrincipal(int base) {
+    switch (base) {
+      case 2:
+        basePrincipal.value = 2;
+        break;
+
+      case 8:
+        basePrincipal.value = 8;
+        break;
+
+      case 10:
+        basePrincipal.value = 10;
+        break;
+
+      case 16:
+        basePrincipal.value = 16;
+        break;
+
+      default:
+        return;
+    }
+  }
+
   resetAll() {
-    firstNumber.value = '0';
-    secondNumber.value = '0';
     mathResult.value = '0';
-    operation.value = '+';
   }
 
   String obtenerNumero() {
@@ -50,8 +87,6 @@ class ConverterController extends GetxController {
   }
 
   selectOperation(String newOperation) {
-    operation.value = newOperation;
-    firstNumber.value = mathResult.value;
     mathResult.value = '0';
   }
 
@@ -61,39 +96,6 @@ class ConverterController extends GetxController {
           mathResult.value.substring(0, mathResult.value.length - 1);
     } else {
       mathResult.value = '0';
-    }
-  }
-
-  calculateResult() {
-    double num1 = double.parse(firstNumber.value);
-    double num2 = double.parse(mathResult.value);
-
-    secondNumber.value = mathResult.value;
-
-    switch (operation.value) {
-      case '+':
-        mathResult.value = '${num1 + num2}';
-        break;
-
-      case '-':
-        mathResult.value = '${num1 - num2}';
-        break;
-
-      case '/':
-        mathResult.value = '${num1 / num2}';
-        break;
-
-      case 'X':
-        mathResult.value = '${num1 * num2}';
-        break;
-
-      default:
-        return;
-    }
-
-    if (mathResult.value.endsWith('.0')) {
-      mathResult.value =
-          mathResult.value.substring(0, mathResult.value.length - 2);
     }
   }
 }

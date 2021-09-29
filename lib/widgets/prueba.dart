@@ -1,23 +1,34 @@
-import 'package:basecalculator/components/funciones_conv.dart';
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
-class prueba extends StatefulWidget {
-  prueba({Key? key}) : super(key: key);
+class Prueba extends StatefulWidget {
+  const Prueba({Key? key}) : super(key: key);
 
   @override
   _pruebaState createState() => _pruebaState();
 }
 
-class _pruebaState extends State<prueba> {
+class _pruebaState extends State<Prueba> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         body: Column(
       children: [
-        Text('${resto(142, 8)}'),
-        Text('${obtCociente(142, 8)}'),
-        Text('${convBaseX(112, 2)}'),
+        Text('${base10('11101100', 2)}'),
       ],
     ));
   }
+}
+
+double base10(String numero, int base) {
+  int length = numero.length - 1;
+  double resultado = 0;
+
+  for (int x = 0; x < numero.length; x++) {
+    resultado += double.parse(numero.substring(x, x + 1)) * pow(base, length);
+    length--;
+  }
+
+  return resultado;
 }

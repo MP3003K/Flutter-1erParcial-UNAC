@@ -32,7 +32,7 @@ String convBaseX(double numero, double base) {
   resultado = '';
   double cociente = numero;
 
-  while (cociente > base) {
+  while (cociente >= base) {
     cociente = obtCociente(cociente, base);
   }
   resultado = invertirPalabra(resultado + '$cociente');
