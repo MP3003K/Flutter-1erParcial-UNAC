@@ -11,10 +11,14 @@ class ConverterController extends GetxController {
 
   bool desabilitarButton(int numero) {
     bool resp = false;
+    print('------------------------');
+    print(numero);
+    print(basePrincipal);
     if (numero >= basePrincipal.value) {
       resp = true;
+      print('Desabilitando botom = ' '$numero');
     }
-
+    print('------------------------');
     return resp;
   }
 
@@ -30,23 +34,30 @@ class ConverterController extends GetxController {
     switch (base) {
       case 2:
         basePrincipal.value = 2;
+        /*  if (desabilitarButton(3) == true) {
+          print('reconoce');
+        }*/
         break;
 
       case 8:
         basePrincipal.value = 8;
+
         break;
 
       case 10:
         basePrincipal.value = 10;
+
         break;
 
       case 16:
         basePrincipal.value = 16;
+
         break;
 
       default:
         return;
     }
+    print(basePrincipal.value);
   }
 
   resetAll() {

@@ -103,59 +103,52 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
                   onPressed: () => calculatorCtrl.addNumber('1'),
                 ),
                 CalculatorButtom(
-                  text: '2',
-                  onPressed: () => calculatorCtrl.desabilitarButton(2)
-                      ? null
-                      : () => calculatorCtrl.addNumber('2'),
-                ),
+                    text: '2',
+                    onPressed: () => calculatorCtrl.desabilitarButton(2)
+                        ? null
+                        : calculatorCtrl.addNumber('2')),
                 CalculatorButtom(
                   text: '3',
-                  onPressed: () => calculatorCtrl.desabilitarButton(3)
-                      ? null
-                      : () => calculatorCtrl.addNumber('3'),
+                  onPressed: () => calculatorCtrl.addNumber('3'),
                 ),
               ],
             ),
             Row(
               children: [
                 CalculatorButtom(
-                  text: '4',
-                  onPressed: () => calculatorCtrl.desabilitarButton(4)
-                      ? null
-                      : () => calculatorCtrl.addNumber('4'),
-                ),
+                    text: '4',
+                    onPressed: () => calculatorCtrl.desabilitarButton(4)
+                        ? null
+                        : calculatorCtrl.addNumber('4')),
                 CalculatorButtom(
-                  text: '5',
-                  onPressed: () => calculatorCtrl.desabilitarButton(5)
-                      ? null
-                      : () => calculatorCtrl.addNumber('5'),
-                ),
+                    text: '5',
+                    onPressed: () => calculatorCtrl.desabilitarButton(5)
+                        ? null
+                        : calculatorCtrl.addNumber('5')),
                 CalculatorButtom(
-                  text: '6',
-                  onPressed: () => calculatorCtrl.desabilitarButton(6)
-                      ? null
-                      : () => calculatorCtrl.addNumber('6'),
-                ),
+                    text: '6',
+                    onPressed: () => calculatorCtrl.desabilitarButton(6)
+                        ? null
+                        : calculatorCtrl.addNumber('6')),
               ],
             ),
             Row(
               children: [
                 CalculatorButtom(
-                  text: '7',
-                  onPressed: () => calculatorCtrl.desabilitarButton(7)
-                      ? null
-                      : () => calculatorCtrl.addNumber('7'),
-                ),
+                    text: '7',
+                    onPressed: () => calculatorCtrl.desabilitarButton(7)
+                        ? null
+                        : calculatorCtrl.addNumber('7')),
                 CalculatorButtom(
-                  text: '8',
-                  onPressed: () => calculatorCtrl.desabilitarButton(8)
-                      ? null
-                      : () => calculatorCtrl.addNumber('8'),
-                ),
+                    text: '8',
+                    onPressed: () => calculatorCtrl.desabilitarButton(8)
+                        ? null
+                        : calculatorCtrl.addNumber('8')),
                 CalculatorButtom(
-                  text: '9',
-                  onPressed: () => calculatorCtrl.addNumber('9'),
-                ),
+                    text: '9',
+                    onPressed: () => calculatorCtrl.desabilitarButton(9)
+                        ? null
+                        : calculatorCtrl.addNumber('9')),
               ],
             ),
             Row(
