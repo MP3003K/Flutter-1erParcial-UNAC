@@ -2,19 +2,19 @@ import 'package:get/get.dart';
 
 class ConverterController extends GetxController {
   var mathResult = '25'.obs;
-  var basePrincipal = 8.obs;
+  var basePrincipal = '8'.obs;
 
   var bin = ''.obs;
   var oct = ''.obs;
   var dec = ''.obs;
   var hex = ''.obs;
 
-  bool desabilitarButton(int numero) {
+  bool desabilitarButton(double numero) {
     bool resp = false;
     print('------------------------');
     print(numero);
     print(basePrincipal);
-    if (numero >= basePrincipal.value) {
+    if (numero >= double.parse(basePrincipal.value)) {
       resp = true;
       print('Desabilitando botom = ' '$numero');
     }
@@ -22,9 +22,9 @@ class ConverterController extends GetxController {
     return resp;
   }
 
-  bool getBasePrincipal(int base) {
+  bool getBasePrincipal(double base) {
     bool resp = false;
-    if (base == basePrincipal.value) {
+    if (base == double.parse(basePrincipal.value)) {
       resp = true;
     }
     return resp;
@@ -33,24 +33,22 @@ class ConverterController extends GetxController {
   cambiarBasePrincipal(int base) {
     switch (base) {
       case 2:
-        basePrincipal.value = 2;
-        /*  if (desabilitarButton(3) == true) {
-          print('reconoce');
-        }*/
+        basePrincipal.value = '2';
+
         break;
 
       case 8:
-        basePrincipal.value = 8;
+        basePrincipal.value = '8';
 
         break;
 
       case 10:
-        basePrincipal.value = 10;
+        basePrincipal.value = '10';
 
         break;
 
       case 16:
-        basePrincipal.value = 16;
+        basePrincipal.value = '16';
 
         break;
 
@@ -85,16 +83,6 @@ class ConverterController extends GetxController {
     }
 
     mathResult.value = mathResult.value + number;
-  }
-
-  addDecimalPoint() {
-    if (mathResult.contains('.')) return;
-
-    if (mathResult.startsWith('0')) {
-      mathResult.value = '0.';
-    } else {
-      mathResult.value = mathResult.value + '.';
-    }
   }
 
   selectOperation(String newOperation) {
