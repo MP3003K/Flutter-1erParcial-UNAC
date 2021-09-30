@@ -7,7 +7,7 @@ class NumberToChangeBase extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(bottom: 30, right: 20),
+      margin: const EdgeInsets.only(bottom: 10, right: 20),
       width: double.infinity,
       alignment: Alignment.centerRight,
       child: FittedBox(

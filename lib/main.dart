@@ -1,8 +1,12 @@
 import 'package:basecalculator/screens/calc_conv_screen.dart';
+import 'package:basecalculator/screens/oper_arim_screen.dart';
+import 'package:basecalculator/screens/oper_logicas_screen.dart';
 import 'package:flutter/material.dart';
 
 import 'constants.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+import 'home.dart';
 
 void main() {
   runApp(const MyApp());
@@ -29,6 +33,14 @@ class MyApp extends StatelessWidget {
                 bodyText2: const TextStyle(color: bodyTextColor),
               ),
         ),
-        home: const CalculatorScreen());
+        routes: {
+          HomeDrawer.ruta: (BuildContext context) => HomeDrawer(),
+          CalculatorScreen.ruta: (BuildContext context) =>
+              const CalculatorScreen(),
+          OperacionesArimeticas.ruta: (BuildContext context) =>
+              const OperacionesArimeticas(),
+          OperacionesLogicas.ruta: (BuildContext context) =>
+              const OperacionesLogicas(),
+        });
   }
 }

@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 class CalculatorButtom extends StatelessWidget {
   final Color bgColor;
   final bool big;
+  final bool altura;
+
   final String text;
   final Function onPressed;
 
@@ -10,6 +12,7 @@ class CalculatorButtom extends StatelessWidget {
       {Key? key,
       bgColor,
       this.big = false,
+      this.altura = false,
       required this.text,
       required this.onPressed})
       : bgColor = bgColor ?? const Color(0xff5E5E5E),
@@ -27,7 +30,9 @@ class CalculatorButtom extends StatelessWidget {
         width: big
             ? MediaQuery.of(context).size.width / 2 - 16
             : MediaQuery.of(context).size.width / 3 - 16,
-        height: MediaQuery.of(context).size.height / 15,
+        height: altura
+            ? MediaQuery.of(context).size.height / 10
+            : MediaQuery.of(context).size.height / 15,
         child: Center(
           child: Text(
             text,
