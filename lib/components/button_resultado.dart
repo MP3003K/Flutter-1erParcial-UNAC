@@ -21,7 +21,7 @@ class ButtonResultado extends StatelessWidget {
     return TextButton(
       style: buttonStyle,
       child: SizedBox(
-        height: MediaQuery.of(context).size.height / 18,
+        height: MediaQuery.of(context).size.height / 22,
         child: Center(
           child: Text(
             text,

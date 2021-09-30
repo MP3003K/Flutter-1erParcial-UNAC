@@ -10,11 +10,8 @@ class ConverterResults extends StatelessWidget {
   ConverterResults({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return Obx(() => Column(
-          children: [
-            NumberToChangeBase(text: '${converterctrl.mathResult}'),
-            SubResult(text: '${converterctrl.bin}'),
-          ],
+    return Obx(() => Expanded(
+          child: NumberToChangeBase(text: '${converterctrl.mathResult}'),
         ));
   }
 }

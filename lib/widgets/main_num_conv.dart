@@ -7,14 +7,17 @@ class NumberToChangeBase extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(bottom: 20),
+      margin: const EdgeInsets.only(bottom: 30, right: 20),
       width: double.infinity,
       alignment: Alignment.centerRight,
       child: FittedBox(
         fit: BoxFit.contain,
         child: Text(
           text,
-          style: const TextStyle(fontSize: 50),
+          style: Theme.of(context)
+              .textTheme
+              .subtitle2!
+              .copyWith(color: Colors.white, fontSize: 50),
         ),
       ),
     );

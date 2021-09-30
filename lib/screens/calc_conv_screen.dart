@@ -26,7 +26,7 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
             Container(
               alignment: Alignment.center,
               width: MediaQuery.of(context).size.width - 2.0,
-              height: 55.0,
+              height: MediaQuery.of(context).size.height / 11,
               decoration: const BoxDecoration(
                 color: Color(0xFF5E5E5E),
               ),
@@ -40,7 +40,7 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
               ),
             ),
             SizedBox(
-                height: 247,
+                height: MediaQuery.of(context).size.height / 3.4,
                 child: Column(
                   children: [
                     Obx(
@@ -50,33 +50,49 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
                             white: calculatorCtrl.getBasePrincipal(2),
                             text: 'BIN = '
                                 '${convBaseX(calculatorCtrl.mathResult.value, calculatorCtrl.basePrincipal.value, '2')}',
-                            onPressed: () => calculatorCtrl.cambiarBasePrincipal(
-                                2,
-                                '${convBaseX(calculatorCtrl.mathResult.value, calculatorCtrl.basePrincipal.value, '2')}'),
+                            onPressed: () =>
+                                calculatorCtrl.cambiarBasePrincipal(
+                                    2,
+                                    convBaseX(
+                                        calculatorCtrl.mathResult.value,
+                                        calculatorCtrl.basePrincipal.value,
+                                        '2')),
                           ),
                           ButtonResultado(
                             white: calculatorCtrl.getBasePrincipal(8),
                             text: 'OCT = '
                                 '${convBaseX(calculatorCtrl.mathResult.value, calculatorCtrl.basePrincipal.value, '8')}',
-                            onPressed: () => calculatorCtrl.cambiarBasePrincipal(
-                                8,
-                                '${convBaseX(calculatorCtrl.mathResult.value, calculatorCtrl.basePrincipal.value, '8')}'),
+                            onPressed: () =>
+                                calculatorCtrl.cambiarBasePrincipal(
+                                    8,
+                                    convBaseX(
+                                        calculatorCtrl.mathResult.value,
+                                        calculatorCtrl.basePrincipal.value,
+                                        '8')),
                           ),
                           ButtonResultado(
                             white: calculatorCtrl.getBasePrincipal(10),
                             text: 'DEC = '
                                 '${convBaseX(calculatorCtrl.mathResult.value, calculatorCtrl.basePrincipal.value, '10')}',
-                            onPressed: () => calculatorCtrl.cambiarBasePrincipal(
-                                10,
-                                '${convBaseX(calculatorCtrl.mathResult.value, calculatorCtrl.basePrincipal.value, '10')}'),
+                            onPressed: () =>
+                                calculatorCtrl.cambiarBasePrincipal(
+                                    10,
+                                    convBaseX(
+                                        calculatorCtrl.mathResult.value,
+                                        calculatorCtrl.basePrincipal.value,
+                                        '10')),
                           ),
                           ButtonResultado(
                             white: calculatorCtrl.getBasePrincipal(16),
                             text: 'HEX = '
                                 '${convBaseX(calculatorCtrl.mathResult.value, calculatorCtrl.basePrincipal.value, '16')}',
-                            onPressed: () => calculatorCtrl.cambiarBasePrincipal(
-                                16,
-                                '${convBaseX(calculatorCtrl.mathResult.value, calculatorCtrl.basePrincipal.value, '16')}'),
+                            onPressed: () =>
+                                calculatorCtrl.cambiarBasePrincipal(
+                                    16,
+                                    convBaseX(
+                                        calculatorCtrl.mathResult.value,
+                                        calculatorCtrl.basePrincipal.value,
+                                        '16')),
                           ),
                         ],
                       ),
