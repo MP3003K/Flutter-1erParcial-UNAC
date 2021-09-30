@@ -30,31 +30,37 @@ class ConverterController extends GetxController {
     return resp;
   }
 
-  cambiarBasePrincipal(int base) {
+// FASE 2 ////
+
+  cambiarBasePrincipal(int base, String resultado) {
     switch (base) {
       case 2:
         basePrincipal.value = '2';
-
         break;
 
       case 8:
         basePrincipal.value = '8';
+        print(resultado);
 
         break;
 
       case 10:
         basePrincipal.value = '10';
+        print(resultado);
 
         break;
 
       case 16:
         basePrincipal.value = '16';
+        print(resultado);
 
         break;
 
       default:
         return;
     }
+    mathResult.value = resultado;
+
     print(basePrincipal.value);
   }
 
