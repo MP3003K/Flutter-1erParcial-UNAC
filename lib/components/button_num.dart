@@ -17,7 +17,7 @@ class ButtonNumb extends StatelessWidget {
     final buttonStyle = TextButton.styleFrom(
         primary: Colors.white,
         backgroundColor: white ? Colors.white : Colors.black,
-        side: const BorderSide(width: 1.2, color: Color(0xff2A2A2A)));
+        side: const BorderSide(width: 2, color: Colors.white));
     return TextButton(
       style: buttonStyle,
       child: Container(

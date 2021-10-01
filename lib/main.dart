@@ -39,7 +39,7 @@ class MyApp extends StatelessWidget {
           OperacionesArimeticas.ruta: (BuildContext context) =>
               OperacionesArimeticas(),
           OperacionesLogicas.ruta: (BuildContext context) =>
-              const OperacionesLogicas(),
+              OperacionesLogicas(),
         });
   }
 }

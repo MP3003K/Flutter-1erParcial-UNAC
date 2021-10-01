@@ -156,19 +156,12 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
                         : calculatorCtrl.addNumber('9')),
               ],
             ),
-            Row(
-              children: [
-                CalculatorButtom(
-                  text: '0',
-                  big: true,
-                  onPressed: () => calculatorCtrl.addNumber('0'),
-                ),
-                CalculatorButtom(
-                  text: '.',
-                  big: true,
-                  onPressed: () => calculatorCtrl.addNumber('1'),
-                ),
-              ],
+            Center(
+              child: CalculatorButtom(
+                text: '0',
+                big: true,
+                onPressed: () => calculatorCtrl.addNumber('0'),
+              ),
             ),
           ],
         ),

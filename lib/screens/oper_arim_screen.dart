@@ -23,7 +23,7 @@ class OperacionesArimeticas extends StatelessWidget {
         backgroundColor: Color(0xFF5E5E5E),
         titleSpacing: 50,
         title: Text(
-          "CALCULATOR",
+          "Operaciones Arimeticas",
           textAlign: TextAlign.center,
           style: Theme.of(context).textTheme.subtitle1!.copyWith(
                 fontWeight: FontWeight.bold,
