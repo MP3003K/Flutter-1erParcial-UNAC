@@ -1,66 +1,104 @@
+import 'dart:math';
+
+import 'package:basecalculator/components/funciones_conv.dart';
 import 'package:get/get.dart';
 
 class ArimeticCtr extends GetxController {
   var operacion = '+'.obs;
-  var numero_anterior = ''.obs;
+  var res = '  '.obs;
+  var num1 = ''.obs;
+  var num2 = ''.obs;
+  var botom = '1'.obs;
 
-  var mathResult = '0'.obs;
+  bool getBoton(double base) {
+    bool resp = false;
+    if (base == double.parse(botom.value)) {
+      resp = true;
+    }
+    return resp;
+  }
 
-/*
-  cambiarBasePrincipal(int base, String resultado) {
-    switch (base) {
+  cambiarBoton(int boton) {
+    switch (boton) {
+      case 1:
+        botom.value = '1';
+        break;
+
       case 2:
-        break;
-
-      case 8:
-
-        break;
-
-      case 10:
-        break;
-
-      case 16:
+        botom.value = '2';
 
         break;
 
       default:
         return;
     }
-    mathResult.value = resultado;
-  }
-*/
-  resetAll() {
-    mathResult.value = '0';
   }
 
-  changeNegativePositive() {
-    if (mathResult.startsWith('-')) {
-      mathResult.value = mathResult.value.replaceFirst('-', '');
-    } else {
-      mathResult.value = '-' + mathResult.value;
+  resetAll() {
+    if (botom.value == '1') {
+      num1.value = '';
+    }
+    if (botom.value == '2') {
+      num2.value = '';
     }
   }
 
   addNumber(String number) {
-    if (mathResult.value == '0') return mathResult.value = number;
+    if (botom.value == '1') {
+      if (num1.value == '0') return num1.value = number;
 
-    if (mathResult.value == '-0') {
-      return mathResult.value = '-' + number;
+      if (num1.value == '-0') {}
+
+      num1.value = num1.value + number;
     }
+    if (botom.value == '2') {
+      if (num2.value == '0') return num2.value = number;
 
-    mathResult.value = mathResult.value + number;
-  }
+      if (num2.value == '-0') {}
 
-  selectOperation(String newOperation) {
-    mathResult.value = '0';
+      num2.value = num2.value + number;
+    }
   }
 
   deleteLastEntry() {
-    if (mathResult.value.replaceAll('-', '').length > 1) {
-      mathResult.value =
-          mathResult.value.substring(0, mathResult.value.length - 1);
+    if (botom.value == '1') {
+      if (num1.value.replaceAll('-', '').length > 1) {
+        num1.value = num1.value.substring(0, num1.value.length - 1);
+      } else {
+        num1.value = '0';
+      }
+    }
+
+    if (botom.value == '2') {
+      if (num2.value.replaceAll('-', '').length > 1) {
+        num2.value = num2.value.substring(0, num2.value.length - 1);
+      } else {
+        num2.value = '0';
+      }
+      num2.value = '';
+    }
+  }
+
+  resultadoSumar() {
+    double a = base10(double.parse(num1.value), 2);
+    double b = base10(double.parse(num2.value), 2);
+    a = b + a;
+    res.value = convBaseX('$a', '10', '2');
+  }
+
+  resultadoRestar() {
+    double a = base10(double.parse(num1.value), 2);
+    double b = base10(double.parse(num2.value), 2);
+    a = a - b;
+    print(a);
+    if (a > 0) {
+      convBaseX('$a', '10', '2');
+      res.value = convBaseX('$a', '10', '2');
     } else {
-      mathResult.value = '0';
+      a = a * -1;
+      convBaseX('$a', '10', '2');
+
+      res.value = '-' + convBaseX('$a', '10', '2');
     }
   }
 }

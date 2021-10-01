@@ -38,7 +38,7 @@ class MyApp extends StatelessWidget {
           CalculatorScreen.ruta: (BuildContext context) =>
               const CalculatorScreen(),
           OperacionesArimeticas.ruta: (BuildContext context) =>
-              const OperacionesArimeticas(),
+              OperacionesArimeticas(),
           OperacionesLogicas.ruta: (BuildContext context) =>
               const OperacionesLogicas(),
         });
