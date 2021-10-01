@@ -9,7 +9,7 @@ import 'package:get/get.dart';
 
 class CalculatorScreen extends StatefulWidget {
   const CalculatorScreen({Key? key}) : super(key: key);
-  static String ruta = "/convertidor";
+  static String ruta = "/";
   @override
   State<CalculatorScreen> createState() => _CalculatorScreenState();
 }

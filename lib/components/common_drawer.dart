@@ -25,8 +25,6 @@ class CommonDrawer {
           const SizedBox(
             height: 20,
           ),
-          obtenerElemento(
-              const Icon(Icons.home), "Home", HomeDrawer.ruta, contexto),
           obtenerElemento(const Icon(Icons.calculate_outlined),
               "BASE CONVERTER", CalculatorScreen.ruta, contexto),
           obtenerElemento(const Icon(Icons.add_circle_outline_outlined),
